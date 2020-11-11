@@ -18,7 +18,7 @@ private:
 	int numItems; //track number of items in inventory
 	
 	//Internal Parts
-	vector<GPU> GPUvect;
+	vector<GPU> GPUvect;  // Unsure why this is errored out...
 	vector<CPU> CPUvect;
 	vector<RAM> RAMvect;
 	vector<MOBO> MOBOvect;

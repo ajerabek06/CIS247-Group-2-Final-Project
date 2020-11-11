@@ -190,6 +190,8 @@ void addMangSubMenu()
 
 }
 
+Inventory GPU; // to initialize the Inventory class
+
 void addGPUMenu() 
 {
 	string man, mod;
@@ -205,7 +207,7 @@ void addGPUMenu()
 	cin >> mem;
 	cout << "Enter the Price: " << endl;
 	cin >> price;
-	Inventory::addGPU(man,mod,mem,price);
+	GPU.addGPU(man,mod,mem,price);
 
 }
 //GPU::GPU(string man, string mod, int mem, double price) {
