@@ -26,13 +26,18 @@ private:
 
 public:
 	//Constructor
-	GPU(string, string, int, double);
+	GPU(string man, string mod, int mem, double pri);
 	
 	//Accessors
 	string getManufacture();
 	string getModel();
 	int getMemory();
 	double getPrice();
+	//Setters
+	void setManufacture(string man);
+	void setModel(string mod);
+	void setMemory(int mem);
+	void setPrice(double pri);
 };
 class CPU
 {
@@ -40,13 +45,18 @@ private:
 	string manufacture, model;
 	double clockSpeed, price;
 public:
-	CPU(string, string , string , double , double);
+	CPU(string mann, string mod, double clock, double pri);
 
 	//Accessors
 	string getManufacture();
 	string getModel();
 	double getClockSpeed();
 	double getPrice();
+	//Setters
+	void setManufacture(string man);
+	void setModel(string mod);
+	void setClockSpeed(double clock);
+	void setPrice(double pri);
 };
 class RAM
 {
