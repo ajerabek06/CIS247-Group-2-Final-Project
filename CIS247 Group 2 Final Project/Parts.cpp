@@ -4,99 +4,122 @@
 */
 
 
-#include "Parts.h"
-#include <iostream>
+#include "Header.h"
+
 
 
 
 using namespace std;
 
 //Constructor definitions
-GPU::GPU(string man, string mod, int mem, double price) {
+Parts::Parts(string man, string mod, double price)
+{
 	manufacture = man;
 	model = mod;
+	price = price;
+}
+GPU::GPU(string man, string mod, double price, int mem): Parts(man,mod,price)
+{
 	memory = mem;
-	price = price;
 }
-CPU::CPU(string man, string chip, string mod, double clock, double price){ 
-	manufacture = man;
-	model = mod;
-	clockSpeed = clock;
-	price = price;
-}
-RAM::RAM(string man, string mod, double clock, int mem, double price) {
-	manufacture = man;
-	model = mod;
-	clockSpeed = clock;
-	memory = mem;
-	price = price;
-}
-MOBO::MOBO(string man, string mod, string chip, double price) {
-	manufacture = man;
-	model = mod;
-	chipSet = chip;
-	price = price;
-}
+
+
+
+
+//CPU::CPU(string man,  string mod, double price, string chip, double clock): Parts(man, mod, price) 
+//{
+//	clockSpeed = clock;
+//}
+//RAM::RAM(string man, string mod, double clock, int mem, double price) {
+//	manufacture = man;
+//	model = mod;
+//	clockSpeed = clock;
+//	memory = mem;
+//	price = price;
+//}
+//MOBO::MOBO(string man, string mod, double price, string chip) {
+//	manufacture = man;
+//	model = mod;
+//	chipSet = chip;
+//	price = price;
+//}
 
 
 //Accessors definitions
 
-//GPU Accessors
-string GPU::getManufacture() {
+//Parts Accessors
+string Parts::getManufacture() {
 	return manufacture;
 }
-string GPU::getModel() {
+string Parts::getModel() {
 	return model;
 }
+double Parts::getPrice() {
+	return price;
+}
+void Parts::setManufacture(string man)
+{
+	manufacture = man;
+}
+void Parts::setModel(string mod)
+{
+	model = mod;
+}
+void Parts::setPrice(double price)
+{
+	price = price;
+}
+
+//GPU Accessors
 int GPU::getMemory() {
 	return memory;
 }
-double GPU::getPrice() {
-	return price;
+void GPU::setMemory(int mem)
+{
+	memory = mem;
 }
+
 //CPU Accessors
-string CPU::getManufacture() {
-	return manufacture;
-}
-string CPU::getModel() {
-	return model;
-}
 double CPU::getClockSpeed() {
 	return clockSpeed;
 }
-double CPU::getPrice() {
-	return price;
-}
+
 //RAM Accessors
-string RAM::getManufacture() {
-	return manufacture;
-}
-string RAM::getModel() {
-	return model;
-}
 double RAM::getClockSpeed() {
 	return clockSpeed;
 }
 int RAM::getMemory() {
 	return memory;
 }
-double RAM::getPrice() {
-	return price;
-}
+
 //MOBO Accessors
-string MOBO::getManufacture() {
-	return manufacture;
-}
-string MOBO::getModel() {
-	return model;
-}
 string MOBO::getChipSet() {
 	return chipSet;
 }
-double MOBO::getPrice() {
-	return price;
+
+
+
+string Parts::toString() const
+{
+	stringstream ss;
+
+	ss << "Manufacturer: " << this->manufacture << endl;
+	ss << "Model: " << this->model << endl;
+	ss << "Price: " << this->price << endl;
+
+	return ss.str();
+}
+string GPU::toString() const
+{
+	stringstream ss(Parts::toString());
+
+	ss << "Memory: " << endl;
+
+	return ss.str();
 }
 
-
-
-
+std::ostream& operator<<(std::ostream& os, const Parts& part)
+{
+	os << part.toString() << endl;
+	return os;
+}

@@ -7,8 +7,7 @@ Purpose:  This class will hold Parts
 
 #pragma once
 
-#include <iostream>
-#include <vector>
+#include "Header.h"
 using namespace std;
 
 //Settup files for storage
@@ -18,25 +17,45 @@ const string GPU_file = "GPU's.csv";
 const string CPU_file = "CPU's.csv";
 const string RAM_file = "RAM.csv";
 
-//Classes for Internal Parts
-class GPU
+
+//Default Parts attributes for every part: Manufacture, Model, Price
+class Parts 
 {
 private:
 	string manufacture, model;
-	int memory;
 	double price;
-	
 
 public:
-	//Constructor
-	GPU(string, string, int, double);
-	
-	//Accessors
+	Parts(string, string, double);
+	virtual std::string toString()const;
+
+
 	string getManufacture();
 	string getModel();
-	int getMemory();
 	double getPrice();
+
+	void setManufacture(string);
+	void setModel(string);
+	void setPrice(double);
+	friend ostream& operator<<(ostream& os, const Parts& part);
+}; 
+class GPU: public Parts
+{
+private:
+	int memory;
+	
+public:
+	//Constructor
+	GPU(string, string, double,int);
+	
+	//Accessors
+	int getMemory();
+	void setMemory(int);
+	std::string toString() const;
 };
+
+
+
 class CPU
 {
 private:
@@ -46,10 +65,9 @@ public:
 	CPU(string, string , string , double , double);
 
 	//Accessors
-	string getManufacture();
-	string getModel();
 	double getClockSpeed();
-	double getPrice();
+	void setClockSpeed();
+
 };
 class RAM
 {

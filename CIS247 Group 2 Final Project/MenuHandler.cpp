@@ -6,23 +6,13 @@
 */
 
 
-#include "Util.h"
-#include <iostream>
-#include <fstream>
-#include <iomanip>
-#include "MenuHandler.h"
-#include "Parts.h"
-#include <vector>
+#include "Header.h"
 
 using namespace std;
 
-
-
-
-
 //Main Menu -testing(partial)
 
-void mainMenu(Inventory& inv)
+void Menus::mainMenu()
 {
 	bool exit = false;
 	string input;
@@ -63,7 +53,7 @@ void mainMenu(Inventory& inv)
 			break;
 		case 5:
 			system("cls");
-			inventoryMangMenu(inv);
+			inventoryMangMenu();
 			break;
 		case 6:
 			system("cls");
@@ -74,7 +64,7 @@ void mainMenu(Inventory& inv)
 }
 
 //Inventory Management Menu -testing(partial)
-void inventoryMangMenu(Inventory& inv)
+void Menus::inventoryMangMenu()
 {
 	int userChoice;
 	bool exit = false;
@@ -96,70 +86,27 @@ void inventoryMangMenu(Inventory& inv)
 		{
 		case 1:
 			system("cls");
-			addRemoveItemMenu(inv,ADD);
+			addMangSubMenu();
 			break;
 		case 2:
 			system("cls");
-			addRemoveItemMenu(inv,REMOVE);
+			//code to sub menu
 			break;
 		case 3:
 			system("cls");
-			inv.printGPU();
+			//code to sub menu
 			break;
 		case 4:
 			system("cls");
-			mainMenu(inv);
+			mainMenu();
 			break;
 		}
 	} while (!exit);
 }
 
 
-
-//Adding and Removing Items Menu -testing(partial)
-void addRemoveItemMenu(Inventory& inv,addRemoveOpt addRemoveOptInput)
-{
-	bool exit = false;
-	int userChoice;
-	string addRemovePath;
-	if (addRemoveOptInput == ADD)
-		addRemovePath = "ADD";
-	else if (addRemoveOptInput == REMOVE)
-		addRemovePath = "Remove";
-	do
-	{	
-		cout << "What would you like to do:" << endl;
-		cout << "1)Add an item (testing)" << endl;
-		cout << "2)Remove an item (testing)" << endl;
-		cout << "3)View all (testing)" << endl;
-		cout << "4)Return to Inv menu" << endl;
-		cin >> userChoice;
-		cin.ignore();
-		userChoice = toupper(userChoice);
-	} while (!checkValidInput(1, 4, userChoice));
-	switch (userChoice)
-	{
-	case 1:
-		system("cls");
-		addMangSubMenu(inv);
-		break;
-	case 2:
-		system("cls");
-		//submenu;
-		break;
-	case 3:
-		system("cls");
-		//code to submenu
-		break;
-	case 4:
-		system("cls");
-		inventoryMangMenu(inv);
-		break;
-	}
-} 
-
 //Adding Items (Managment) submenu(testing)
-void addMangSubMenu(Inventory& inv) 
+void Menus::addMangSubMenu()
 {
 	int userChoice;
 	do
@@ -175,7 +122,7 @@ void addMangSubMenu(Inventory& inv)
 	{
 	case 1:
 		system("cls");
-		addGPUMenu(inv);
+		addGPUMenu();
 		break;
 	case 2:
 		system("cls");
@@ -187,19 +134,18 @@ void addMangSubMenu(Inventory& inv)
 		break;
 	case 4:
 		system("cls");
-		inventoryMangMenu(inv);
+		inventoryMangMenu();
 		break;
 	}
 
 }
 
-void addGPUMenu(Inventory& inv) 
+void Menus::addGPUMenu()
 {
 	string man, mod;
 	int mem;
 	double price;
 	
-	cin.ignore();
 	cout << "Enter the Manufacture: " << endl;
 	getline(cin, man);
 	cout << "Enter the Model:" << endl;
@@ -208,7 +154,7 @@ void addGPUMenu(Inventory& inv)
 	cin >> mem;
 	cout << "Enter the Price: " << endl;
 	cin >> price;
-	inv.addGPU(man,mod,mem,price);
+	//Inventory::addGPU(man,mod,price,mem);
 
 }
 
