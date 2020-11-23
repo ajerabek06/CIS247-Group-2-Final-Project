@@ -97,27 +97,27 @@ string MOBO::getChipSet() {
 
 
 
-string Parts::toString() const
-{
-	stringstream ss;
+//string Parts::toString() const
+//{
+//	stringstream ss;
+//
+//	ss << "Manufacturer: " << this->manufacture << endl;
+//	ss << "Model: " << this->model << endl;
+//	ss << "Price: " << this->price << endl;
+//
+//	return ss.str();
+//}
+//string GPU::toString() const
+//{
+//	stringstream ss(Parts::toString());
+//
+//	ss << "Memory: " << endl;
+//
+//	return ss.str();
+//}
 
-	ss << "Manufacturer: " << this->manufacture << endl;
-	ss << "Model: " << this->model << endl;
-	ss << "Price: " << this->price << endl;
-
-	return ss.str();
-}
-string GPU::toString() const
-{
-	stringstream ss(Parts::toString());
-
-	ss << "Memory: " << endl;
-
-	return ss.str();
-}
-
-std::ostream& operator<<(std::ostream& os, const Parts& part)
-{
-	os << part.toString() << endl;
-	return os;
-}
+//std::ostream& operator<<(std::ostream& os, const Parts& part)
+//{
+//	os << part.toString() << endl;
+//	return os;
+//}

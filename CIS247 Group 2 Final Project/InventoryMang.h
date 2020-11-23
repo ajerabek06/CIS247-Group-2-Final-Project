@@ -8,7 +8,7 @@ class Inventory
 public:
 	GPU gpu1;
 	//Internal Parts
-	void addGPU(GPU);
+	void addGPU();
 	void addCPU(string, string, double, double, double);
 	void addRAM(string, string, double, int, double);
 	void addMOBO(string, string, double,int);

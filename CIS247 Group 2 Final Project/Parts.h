@@ -26,9 +26,9 @@ private:
 	double price;
 
 public:
-	Parts();
+	//Constructor
 	Parts(string, string, double);
-	virtual std::string toString()const;
+	//virtual std::string toString()const;
 
 
 	string getManufacture();
@@ -47,13 +47,12 @@ private:
 	
 public:
 	//Constructor
-	GPU();
 	GPU(string, string, double,int);
 	
 	//Accessors
 	int getMemory();
 	void setMemory(int);
-	std::string toString() const;
+	//std::string toString() const;
 };
 
 
