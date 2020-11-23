@@ -6,12 +6,10 @@
 
 #include "Header.h"
 
-
-
-
 using namespace std;
 
 //Constructor definitions
+
 Parts::Parts(string man, string mod, double price)
 {
 	manufacture = man;

@@ -26,6 +26,7 @@ private:
 	double price;
 
 public:
+	Parts();
 	Parts(string, string, double);
 	virtual std::string toString()const;
 
@@ -46,6 +47,7 @@ private:
 	
 public:
 	//Constructor
+	GPU();
 	GPU(string, string, double,int);
 	
 	//Accessors

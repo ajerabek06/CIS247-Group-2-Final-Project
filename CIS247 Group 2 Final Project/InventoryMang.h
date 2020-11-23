@@ -6,15 +6,17 @@ using namespace std;
 class Inventory
 {
 public:
-	Inventory(); //default
-
+	GPU gpu1;
 	//Internal Parts
-	void addGPU(string, string, double, int);
-	void addCPU(string, string, string, double, double);
+	void addGPU(GPU);
+	void addCPU(string, string, double, double, double);
 	void addRAM(string, string, double, int, double);
-	void addMOBO(string, string, string, double);
+	void addMOBO(string, string, double,int);
+
+	
 
 	void printGPU();
+	void writeGPUToFile();
 
 private:
 	int numItems; //track number of items in inventory

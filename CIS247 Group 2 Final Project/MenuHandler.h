@@ -13,30 +13,28 @@
 
 const int PRICE_WIDTH = 6;	//standardized width for the price column when printing inv contents.
 const int NUM_WIDTH = 4;
-
+enum addRemoveOpt { ADD, REMOVE };  //for later use int the add remove menu(makes things easier)
 
 class Menus
 {
 private:
-	enum addRemoveOpt { ADD, REMOVE };  //for later use int the add remove menu(makes things easier)
+	
+
 public:
-	void mainMenu();
-	void inventoryMangMenu();
-	void viewItemsMenu();
-	void addRemoveItemMenu(addRemoveOpt);
-
-	void internalPartsMenu();
-	void externalPartsMenu();
-	void extraPartsMenu();
-
-
-
-	void addMangSubMenu();
-	void removeMangSubMenu();
-
-	void addGPUMenu();
+	void testMenu();
+	//void mainMenu();
+	//void inventoryMangMenu();
+	//void viewItemsMenu();
+	//void addRemoveItemMenu(addRemoveOpt);
+	//
+	//
+	//void addMangSubMenu();
+	//void removeMangSubMenu();
+	//
+	//void addGPUMenu();
 
 };
+
 
 
 
