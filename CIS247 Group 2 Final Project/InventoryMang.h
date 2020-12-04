@@ -4,22 +4,22 @@
 using namespace std;
 
 class Inventory:
-	public GPU
+	public GPU,CPU,RAM,MOBO
 {
 public:
 
-	//Internal Parts
-	void saveGPU();
-	void addBasicParts();
-	void addGPU();
+	//Create Internal Parts
+	GPU createGPU();
+	CPU createCPU();
+	RAM createRAM();
+	MOBO createMOBO();
 
+	//Save Functions
+	void saveGPU(GPU&);
+	void saveCPU(CPU&);
+	void saveRAM(RAM&);
+	void saveMOBO(MOBO&);
 
-	string getMan();
-	string getMod();
-	double getPrice();
-
-	void printGPU();
-	void writeGPUToFile();
 
 private:
 

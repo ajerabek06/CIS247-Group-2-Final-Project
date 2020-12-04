@@ -10,14 +10,6 @@ Purpose:  This class will hold Parts
 #include "Header.h"
 using namespace std;
 
-//Settup files for storage
-
-//Internal Parts
-const string GPU_file = "GPU's.csv";
-const string CPU_file = "CPU's.csv";
-const string RAM_file = "RAM.csv";
-
-
 //Default Parts attributes for every part: Manufacture, Model, Price
 class Parts 
 {
@@ -29,7 +21,7 @@ public:
 	//Constructor
 	Parts();
 	Parts(string, string, double);
-	//virtual std::string toString()const;
+	
 
 
 	string getManufacture();
@@ -38,8 +30,7 @@ public:
 
 	void setManufacture(string);
 	void setModel(string);
-	void setPrice(double);
-	friend ostream& operator<<(ostream& os, const Parts& part);
+	void setPrice(double);	
 }; 
 class GPU: public Parts
 {
@@ -52,54 +43,49 @@ public:
 	
 	//Accessors
 	int getMemory();
-	void setMemory(int);
-	//std::string toString() const;
+	void setMemory(int);	
 };
-
-
-
-class CPU
+class CPU: public Parts
 {
 private:
-	string manufacture, model;
-	double clockSpeed, price;
+	string chipSet;
+	double clockSpeed;
 public:
-	CPU(string, string , string , double , double);
+	CPU(string, string, double,string, double);
 
 	//Accessors
+	string getChipSet();
 	double getClockSpeed();
-	void setClockSpeed();
-
+	
+	void setChipSet(string);
+	void setClockSpeed(double);
+	
 };
-class RAM
+class RAM: public Parts
 {
-private:
-	string manufacture, model;
+private:	
 	int memory;
-	double clockSpeed, price;
+	double clockSpeed;
 public:
-	RAM(string, string, double , int, double);
+	RAM(string, string, double, double, int);
 
 	//Accessors
-	string getManufacture();
-	string getModel();
 	double getClockSpeed();
 	int getMemory();
-	double getPrice();
+	void setClockSpeed(double);
+	void setMemory(int);
 };
-class MOBO
+class MOBO: public Parts
 {
 private:
-	string manufacture, model,chipSet;
-	double price;
+	string chipSet;
+	
 public:
-	MOBO(string man, string mod, string chip, double price);
+	MOBO(string, string, double, string);
 
 	//Accessors
-	string getManufacture();
-	string getModel();
 	string getChipSet();
-	double getPrice();
+	void setChipSet(string);
 };
 
 

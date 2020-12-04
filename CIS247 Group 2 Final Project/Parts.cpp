@@ -1,9 +1,3 @@
-/*
-		Done
-
-*/
-
-
 #include "Header.h"
 
 using namespace std;
@@ -22,32 +16,34 @@ Parts::Parts(string man, string mod, double price)
 	model = mod;
 	price = price;
 }
-
-GPU::GPU(string man, string mod, double price, int mem)
+GPU::GPU(string man, string mod, double pr, int mem)
 {
+	manufacture = man;
+	model = mod;
+	price = pr;
 	memory = mem;
 }
-
-
-
-
-//CPU::CPU(string man,  string mod, double price, string chip, double clock): Parts(man, mod, price) 
-//{
-//	clockSpeed = clock;
-//}
-//RAM::RAM(string man, string mod, double clock, int mem, double price) {
-//	manufacture = man;
-//	model = mod;
-//	clockSpeed = clock;
-//	memory = mem;
-//	price = price;
-//}
-//MOBO::MOBO(string man, string mod, double price, string chip) {
-//	manufacture = man;
-//	model = mod;
-//	chipSet = chip;
-//	price = price;
-//}
+CPU::CPU(string man,  string mod, double pr, string chip, double clock)
+{
+	manufacture = man;
+	model = mod;
+	price = pr;
+	chipSet = chip;
+	clockSpeed = clock;
+}
+RAM::RAM(string man, string mod, double pr, double clock, int mem) {
+	manufacture = man;
+	model = mod;
+	price = pr;
+	clockSpeed = clock;
+	memory = mem;	
+}
+MOBO::MOBO(string man, string mod, double pr, string chip) {
+	manufacture = man;
+	model = mod;
+	price = pr;
+	chipSet = chip;
+}
 
 
 //Accessors definitions
@@ -85,8 +81,20 @@ void GPU::setMemory(int mem)
 }
 
 //CPU Accessors
+string CPU::getChipSet()
+{
+	return chipSet;
+}
 double CPU::getClockSpeed() {
 	return clockSpeed;
+}
+void CPU::setChipSet(string chip)
+{
+	chipSet = chip;
+}
+void CPU::setClockSpeed(double clock)
+{
+	clockSpeed = clock;
 }
 
 //RAM Accessors
@@ -96,35 +104,20 @@ double RAM::getClockSpeed() {
 int RAM::getMemory() {
 	return memory;
 }
+void RAM::setClockSpeed(double clock)
+{
+	clockSpeed = clock;
+}
+void RAM::setMemory(int mem)
+{
+	memory = mem;
+}
 
 //MOBO Accessors
 string MOBO::getChipSet() {
 	return chipSet;
 }
-
-
-
-//string Parts::toString() const
-//{
-//	stringstream ss;
-//
-//	ss << "Manufacturer: " << this->manufacture << endl;
-//	ss << "Model: " << this->model << endl;
-//	ss << "Price: " << this->price << endl;
-//
-//	return ss.str();
-//}
-//string GPU::toString() const
-//{
-//	stringstream ss(Parts::toString());
-//
-//	ss << "Memory: " << endl;
-//
-//	return ss.str();
-//}
-
-//std::ostream& operator<<(std::ostream& os, const Parts& part)
-//{
-//	os << part.toString() << endl;
-//	return os;
-//}
+void MOBO::setChipSet(string chip)
+{
+	chipSet = chip;
+}
