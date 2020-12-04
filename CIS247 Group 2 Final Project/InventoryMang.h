@@ -3,28 +3,24 @@
 
 using namespace std;
 
-class Inventory
+class Inventory:
+	public GPU
 {
 public:
-	GPU gpu1;
-	//Internal Parts
-	void addGPU();
-	void addCPU(string, string, double, double, double);
-	void addRAM(string, string, double, int, double);
-	void addMOBO(string, string, double,int);
 
-	
+	//Internal Parts
+	void saveGPU();
+	void addBasicParts();
+	void addGPU();
+
+
+	string getMan();
+	string getMod();
+	double getPrice();
 
 	void printGPU();
 	void writeGPUToFile();
 
 private:
-	int numItems; //track number of items in inventory
-
-	//Internal Parts
-	vector<GPU> GPUvect;
-	vector<CPU> CPUvect;
-	vector<RAM> RAMvect;
-	vector<MOBO> MOBOvect;
 
 };

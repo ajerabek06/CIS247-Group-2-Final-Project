@@ -21,12 +21,13 @@ const string RAM_file = "RAM.csv";
 //Default Parts attributes for every part: Manufacture, Model, Price
 class Parts 
 {
-private:
+protected:
 	string manufacture, model;
 	double price;
 
 public:
 	//Constructor
+	Parts();
 	Parts(string, string, double);
 	//virtual std::string toString()const;
 

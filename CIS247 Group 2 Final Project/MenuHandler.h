@@ -21,7 +21,8 @@ private:
 	
 
 public:
-	void testMenu();
+	void basicPartsInfo();
+	void addGPUMenu();
 	//void mainMenu();
 	//void inventoryMangMenu();
 	//void viewItemsMenu();

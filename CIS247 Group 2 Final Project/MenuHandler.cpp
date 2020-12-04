@@ -15,9 +15,11 @@ Inventory* invPtr;  //Pointer for accessing the InventoryManagement functions
 
 //Main Menu -testing(partial)
 
-void Menus::testMenu()
+
+void Menus::addGPUMenu()
 {
 	invPtr->addGPU();
+
 }
 
 //void Menus::mainMenu()

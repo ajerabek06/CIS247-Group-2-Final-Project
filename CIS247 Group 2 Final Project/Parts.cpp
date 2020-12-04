@@ -10,13 +10,20 @@ using namespace std;
 
 //Constructor definitions
 
+Parts::Parts()
+{
+	manufacture = "Unknown";
+	model = "Uknown";
+	price = 0.0;
+}
 Parts::Parts(string man, string mod, double price)
 {
 	manufacture = man;
 	model = mod;
 	price = price;
 }
-GPU::GPU(string man, string mod, double price, int mem): Parts(man,mod,price)
+
+GPU::GPU(string man, string mod, double price, int mem)
 {
 	memory = mem;
 }

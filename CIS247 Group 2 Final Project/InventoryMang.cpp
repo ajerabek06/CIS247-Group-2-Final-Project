@@ -5,7 +5,9 @@ using namespace std;
 
 const string gpuFile = "List of GPU's.csv";
 
-void Inventory::addGPU()
+tuple <string, string, double> basicInfo;
+
+void Inventory::saveGPU()
 {
 	string man, mod;
 	int mem;
@@ -42,9 +44,29 @@ void Inventory::addGPU()
 	return;
 }
 
-
-
-void Inventory::writeGPUToFile()
+void Inventory::addBasicParts()
 {
-	
+	string man, mod;
+	double price;
+	cout << "Manufacture: ";
+	getline(cin, man);
+	get<0>(basicInfo) = man;
+	cout << "Model: ";
+	getline(cin, mod);
+	get<1>(basicInfo) = mod;
+	cout << "Price: ";
+	cin >> price;
+	get<3>(basicInfo) = price;
 }
+void Inventory::addGPU()
+{
+	int mem;
+	cout << "Please enter the following Information" << endl;
+	Inventory::addBasicParts();
+	cout << "Memory: ";
+	cin >> mem;
+
+	GPU gpu1(get<0>(basicInfo), model, mem, price);
+
+}
+

@@ -14,7 +14,7 @@ int main()
 	cout << "Hello and welcome to Group 2's CIS247 Final Project app" << endl;
 	Menus menu;
 	//Inventory inv;
-	menu.testMenu();
+	menu.addGPUMenu();
 	
 	cout << "Thank you!\n";
 	system("pause");
