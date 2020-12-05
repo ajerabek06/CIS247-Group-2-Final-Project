@@ -7,19 +7,16 @@
 //                                                 
 // ---------------------------------------------------------------
 
-#include <iostream>
-#include "MenuHandler.h"
+#include "Header.h"
 
 int main()
-{
-
-	// Simple main file to open the main menu and allow user to navigate
-	// through the program
-	
-	Inventory inv;
+{	
 	cout << "Hello and welcome to Group 2's CIS247 Final Project app" << endl;
-	mainMenu(inv);
-	cout << "Thank you!";
+	Menus menu;
+	//Inventory inv;
+	menu.mainMenu();
+	
+	cout << "Thank you!\n";
 	system("pause");
 	return 0;
 }

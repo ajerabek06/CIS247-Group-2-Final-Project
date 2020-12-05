@@ -1,102 +1,123 @@
-/*
-		Done
-
-*/
-
-
-#include "Parts.h"
-#include <iostream>
-
-
+#include "Header.h"
 
 using namespace std;
 
 //Constructor definitions
-GPU::GPU(string man, string mod, int mem, double price) {
+
+Parts::Parts()
+{
+	manufacture = "Unknown";
+	model = "Uknown";
+	price = 0.0;
+}
+Parts::Parts(string man, string mod, double price)
+{
 	manufacture = man;
 	model = mod;
+	price = price;
+}
+GPU::GPU(string man, string mod, double pr, int mem)
+{
+	manufacture = man;
+	model = mod;
+	price = pr;
 	memory = mem;
-	price = price;
 }
-CPU::CPU(string man, string chip, string mod, double clock, double price){ 
+CPU::CPU(string man,  string mod, double pr, string chip, double clock)
+{
 	manufacture = man;
 	model = mod;
-	clockSpeed = clock;
-	price = price;
-}
-RAM::RAM(string man, string mod, double clock, int mem, double price) {
-	manufacture = man;
-	model = mod;
-	clockSpeed = clock;
-	memory = mem;
-	price = price;
-}
-MOBO::MOBO(string man, string mod, string chip, double price) {
-	manufacture = man;
-	model = mod;
+	price = pr;
 	chipSet = chip;
-	price = price;
+	clockSpeed = clock;
+}
+RAM::RAM(string man, string mod, double pr, double clock, int mem) {
+	manufacture = man;
+	model = mod;
+	price = pr;
+	clockSpeed = clock;
+	memory = mem;	
+}
+MOBO::MOBO(string man, string mod, double pr, string chip) {
+	manufacture = man;
+	model = mod;
+	price = pr;
+	chipSet = chip;
 }
 
 
 //Accessors definitions
 
-//GPU Accessors
-string GPU::getManufacture() {
+//Parts Accessors
+string Parts::getManufacture() {
 	return manufacture;
 }
-string GPU::getModel() {
+string Parts::getModel() {
 	return model;
 }
+double Parts::getPrice() {
+	return price;
+}
+void Parts::setManufacture(string man)
+{
+	manufacture = man;
+}
+void Parts::setModel(string mod)
+{
+	model = mod;
+}
+void Parts::setPrice(double price)
+{
+	price = price;
+}
+
+//GPU Accessors
 int GPU::getMemory() {
 	return memory;
 }
-double GPU::getPrice() {
-	return price;
+void GPU::setMemory(int mem)
+{
+	memory = mem;
 }
+
 //CPU Accessors
-string CPU::getManufacture() {
-	return manufacture;
-}
-string CPU::getModel() {
-	return model;
+string CPU::getChipSet()
+{
+	return chipSet;
 }
 double CPU::getClockSpeed() {
 	return clockSpeed;
 }
-double CPU::getPrice() {
-	return price;
+void CPU::setChipSet(string chip)
+{
+	chipSet = chip;
 }
+void CPU::setClockSpeed(double clock)
+{
+	clockSpeed = clock;
+}
+
 //RAM Accessors
-string RAM::getManufacture() {
-	return manufacture;
-}
-string RAM::getModel() {
-	return model;
-}
 double RAM::getClockSpeed() {
 	return clockSpeed;
 }
 int RAM::getMemory() {
 	return memory;
 }
-double RAM::getPrice() {
-	return price;
+void RAM::setClockSpeed(double clock)
+{
+	clockSpeed = clock;
 }
+void RAM::setMemory(int mem)
+{
+	memory = mem;
+}
+
 //MOBO Accessors
-string MOBO::getManufacture() {
-	return manufacture;
-}
-string MOBO::getModel() {
-	return model;
-}
 string MOBO::getChipSet() {
 	return chipSet;
 }
-double MOBO::getPrice() {
-	return price;
+void MOBO::setChipSet(string chip)
+{
+	chipSet = chip;
 }
-
-
-
-

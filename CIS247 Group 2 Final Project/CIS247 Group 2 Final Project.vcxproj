@@ -139,13 +139,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CIS247 Group 2 Final Project.cpp" />
+    <ClCompile Include="Main.cpp" />
     <ClCompile Include="Parts.cpp" />
     <ClCompile Include="InventoryMang.cpp" />
     <ClCompile Include="MenuHandler.cpp" />
     <ClCompile Include="Util.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Header.h" />
+    <ClInclude Include="InventoryMang.h" />
     <ClInclude Include="Parts.h" />
     <ClInclude Include="MenuHandler.h" />
     <ClInclude Include="Util.h" />

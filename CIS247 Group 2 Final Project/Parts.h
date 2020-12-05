@@ -7,79 +7,85 @@ Purpose:  This class will hold Parts
 
 #pragma once
 
-#include <iostream>
-#include <vector>
+#include "Header.h"
 using namespace std;
 
-//Settup files for storage
-
-//Internal Parts
-const string GPU_file = "GPU's.csv";
-const string CPU_file = "CPU's.csv";
-const string RAM_file = "RAM.csv";
-
-//Classes for Internal Parts
-class GPU
+//Default Parts attributes for every part: Manufacture, Model, Price
+class Parts 
 {
-private:
+protected:
 	string manufacture, model;
-	int memory;
 	double price;
-	
 
 public:
 	//Constructor
-	GPU(string, string, int, double);
+	Parts();
+	Parts(string, string, double);
+	
+
+
+	string getManufacture();
+	string getModel();
+	double getPrice();
+
+	void setManufacture(string);
+	void setModel(string);
+	void setPrice(double);	
+}; 
+class GPU: public Parts
+{
+private:
+	int memory;
+	
+public:
+	//Constructor
+	GPU(string, string, double,int);
 	
 	//Accessors
-	string getManufacture();
-	string getModel();
 	int getMemory();
-	double getPrice();
+	void setMemory(int);	
 };
-class CPU
+class CPU: public Parts
 {
 private:
-	string manufacture, model;
-	double clockSpeed, price;
+	string chipSet;
+	double clockSpeed;
 public:
-	CPU(string, string , string , double , double);
+	CPU(string, string, double,string, double);
 
 	//Accessors
-	string getManufacture();
-	string getModel();
-	double getClockSpeed();
-	double getPrice();
-};
-class RAM
-{
-private:
-	string manufacture, model;
-	int memory;
-	double clockSpeed, price;
-public:
-	RAM(string, string, double , int, double);
-
-	//Accessors
-	string getManufacture();
-	string getModel();
-	double getClockSpeed();
-	int getMemory();
-	double getPrice();
-};
-class MOBO
-{
-private:
-	string manufacture, model,chipSet;
-	double price;
-public:
-	MOBO(string man, string mod, string chip, double price);
-
-	//Accessors
-	string getManufacture();
-	string getModel();
 	string getChipSet();
-	double getPrice();
+	double getClockSpeed();
+	
+	void setChipSet(string);
+	void setClockSpeed(double);
+	
+};
+class RAM: public Parts
+{
+private:	
+	int memory;
+	double clockSpeed;
+public:
+	RAM(string, string, double, double, int);
+
+	//Accessors
+	double getClockSpeed();
+	int getMemory();
+	void setClockSpeed(double);
+	void setMemory(int);
+};
+class MOBO: public Parts
+{
+private:
+	string chipSet;
+	
+public:
+	MOBO(string, string, double, string);
+
+	//Accessors
+	string getChipSet();
+	void setChipSet(string);
 };
 
 
