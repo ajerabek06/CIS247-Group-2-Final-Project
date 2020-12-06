@@ -20,7 +20,10 @@ public:
 	void saveRAM(RAM&);
 	void saveMOBO(MOBO&);
 
-
+	void printGPU();
+	void printCPU();
+	void printRAM();
+	void printMOBO();
 private:
 
 };

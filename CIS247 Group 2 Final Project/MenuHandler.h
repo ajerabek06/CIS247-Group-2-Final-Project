@@ -16,16 +16,13 @@ private:
 	
 
 public:
-	void addGPUMenu();
 	void mainMenu();
 	void inventoryMangMenu();
 	void addMangSubMenu();
-
+	void viewItemsMenu();
 
 	//void addRemoveItemMenu(addRemoveOpt);
-	//void viewItemsMenu();
-	
-	void removeMangSubMenu();
+	//void removeMangSubMenu();
 };
 
 
