@@ -25,7 +25,6 @@ tuple <string, string, double> basicInfo()
 
 }
 
-
 //Functions to create objects for the different parts
 GPU Inventory::createGPU()
 {	
@@ -69,8 +68,6 @@ MOBO Inventory::createMOBO()
 	getline(cin, chip);
 	return MOBO(get<0>(info), get<1>(info), get<2>(info), chip);
 }
-
-
 
 //Functions to save the parts to a file
 void Inventory::saveGPU(GPU& gpu)
@@ -135,7 +132,119 @@ void Inventory::saveMOBO(MOBO& mobo)
 }
 
 //Functions to read parts from a file
+void Inventory::printGPU()
+{
+	ifstream gpuSave(gpuFile);
+	if (gpuSave.is_open())
+	{
+		string delim = "";
+		delim.assign(20, '-');
+		int recordCount = 1;
 
+		string Man, Mod, Price, Mem;
+		while (getline(gpuSave, Man, ','))
+		{
+			getline(gpuSave, Mod, ',');
+			getline(gpuSave, Price, ',');
+			getline(gpuSave, Mem, '\n');
+			cout << delim << endl;
+			cout << "Record # " << recordCount << endl;
+			cout << "Manufacture: " << Man << endl;
+			cout << "Model: " << Mod << endl;
+			cout << "Price: " << Price << endl;
+			cout << "Memory: " << Mem << endl;
+			recordCount++;
+		}
+		system("Pause");
+		cout << delim << endl;
+		gpuSave.close();
+		system("cls");
+	}
+}
+void Inventory::printCPU()
+{
+	ifstream cpuSave(cpuFile);
+	if (cpuSave.is_open())
+	{
+		string delim = "";
+		delim.assign(20, '-');
+		int recordCount = 1;
 
+		string Man, Mod, Price, Mem;
+		while (getline(cpuSave, Man, ','))
+		{
+			getline(cpuSave, Mod, ',');
+			getline(cpuSave, Price, ',');
+			getline(cpuSave, Mem, '\n');
+			cout << delim << endl;
+			cout << "Record # " << recordCount << endl;
+			cout << "Manufacture: " << Man << endl;
+			cout << "Model: " << Mod << endl;
+			cout << "Price: " << Price << endl;
+			cout << "Memory: " << Mem << endl;
+			recordCount++;
+		}
+		system("Pause");
+		cout << delim << endl;
+		cpuSave.close();
+		system("cls");
+	}
+}
+void Inventory::printRAM()
+{
+	ifstream RamSave(RamFile);
+	if (RamSave.is_open())
+	{
+		string delim = "";
+		delim.assign(20, '-');
+		int recordCount = 1;
 
+		string Man, Mod, Price, Mem;
+		while (getline(RamSave, Man, ','))
+		{
+			getline(RamSave, Mod, ',');
+			getline(RamSave, Price, ',');
+			getline(RamSave, Mem, '\n');
+			cout << delim << endl;
+			cout << "Record # " << recordCount << endl;
+			cout << "Manufacture: " << Man << endl;
+			cout << "Model: " << Mod << endl;
+			cout << "Price: " << Price << endl;
+			cout << "Memory: " << Mem << endl;
+			recordCount++;
+		}
+		system("Pause");
+		cout << delim << endl;
+		RamSave.close();
+		system("cls");
+	}
+}
+void Inventory::printMOBO()
+{
+	ifstream MoboSave(MoboFile);
+	if (MoboSave.is_open())
+	{
+		string delim = "";
+		delim.assign(20, '-');
+		int recordCount = 1;
 
+		string Man, Mod, Price, Mem;
+		while (getline(MoboSave, Man, ','))
+		{
+			getline(MoboSave, Mod, ',');
+			getline(MoboSave, Price, ',');
+			getline(MoboSave, Mem, '\n');
+			cout << delim << endl;
+			cout << "Record # " << recordCount << endl;
+			cout << "Manufacture: " << Man << endl;
+			cout << "Model: " << Mod << endl;
+			cout << "Price: " << Price << endl;
+			cout << "Memory: " << Mem << endl;
+			recordCount++;
+		}
+		system("Pause");
+		cout << delim << endl;
+		MoboSave.close();
+		system("cls");
+	}
+}
