@@ -21,7 +21,6 @@ public:
 	void inventoryMangMenu();
 	void addMangSubMenu();
 
-
 	//void addRemoveItemMenu(addRemoveOpt);
 	//void viewItemsMenu();
 	

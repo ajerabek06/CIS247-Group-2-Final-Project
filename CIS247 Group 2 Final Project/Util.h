@@ -17,3 +17,4 @@ class Util
 };
 
 bool checkValidInput(int, int, int); //basic input validation
+bool enterAnotherOrReturn();

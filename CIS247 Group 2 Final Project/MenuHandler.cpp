@@ -11,13 +11,8 @@
 using namespace std;
 
 Inventory* invPtr;  //Pointer for accessing the InventoryManagement functions
+Util* utilPtr;
 
-void Menus::addGPUMenu()
-{
-	GPU newGPU = invPtr->createGPU();
-	invPtr->saveGPU(newGPU);
-
-}
 
 //Main Menu -testing(partial)
 void Menus::mainMenu()
@@ -127,29 +122,41 @@ void Menus::addMangSubMenu()
 	case 1:
 	{
 		system("cls");
-		GPU newGPU = invPtr->createGPU();
-		invPtr->saveGPU(newGPU);
+		do
+		{
+			GPU newGPU = invPtr->createGPU();
+			invPtr->saveGPU(newGPU);			
+		} while (enterAnotherOrReturn());
 		break;
 	}
 	case 2:
 	{
 		system("cls");
-		CPU newCPU = invPtr->createCPU();
-		invPtr->saveCPU(newCPU);
+		do
+		{
+			CPU newCPU = invPtr->createCPU();
+			invPtr->saveCPU(newCPU);
+		} while (enterAnotherOrReturn());
 		break;
 	}
 	case 3:
 	{
 		system("cls");
-		RAM newRAM = invPtr->createRAM();
-		invPtr->saveRAM(newRAM);
+		do
+		{
+			RAM newRAM = invPtr->createRAM();
+			invPtr->saveRAM(newRAM);
+		} while (enterAnotherOrReturn());
 		break;
 	}
 	case 4:
 	{
 		system("cls");
-		MOBO newMOBO = invPtr->createMOBO();
-		invPtr->saveMOBO(newMOBO);
+		do
+		{
+			MOBO newMOBO = invPtr->createMOBO();
+			invPtr->saveMOBO(newMOBO);
+		} while (enterAnotherOrReturn());
 		break;
 	}
 	case 5:
@@ -157,10 +164,8 @@ void Menus::addMangSubMenu()
 		inventoryMangMenu();
 		break;
 	}
-
+	addMangSubMenu();
 }
-//
-//
-//
+
 
 

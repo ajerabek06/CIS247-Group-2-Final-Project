@@ -28,12 +28,13 @@ tuple <string, string, double> basicInfo()
 
 //Functions to create objects for the different parts
 GPU Inventory::createGPU()
-{
+{	
 	int mem;
 	auto info = basicInfo();
 	cout << "Memory: ";
 	cin >> mem;
 	return GPU(get<0>(info), get<1>(info), get<2>(info), mem);
+
 }
 CPU Inventory::createCPU()
 {
@@ -133,6 +134,7 @@ void Inventory::saveMOBO(MOBO& mobo)
 	system("cls");
 }
 
+//Functions to read parts from a file
 
 
 
