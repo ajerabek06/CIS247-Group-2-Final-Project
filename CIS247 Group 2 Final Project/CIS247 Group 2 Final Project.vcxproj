@@ -139,17 +139,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CPUEditorMenu.cpp" />
+    <ClCompile Include="GPUEditorMenu.cpp" />
+    <ClCompile Include="InventoryManagementMenu.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="MOBOEditorMenu.cpp" />
+    <ClCompile Include="PartEditorMenu.cpp" />
+    <ClCompile Include="PartFactory.cpp" />
     <ClCompile Include="Parts.cpp" />
-    <ClCompile Include="InventoryMang.cpp" />
     <ClCompile Include="MenuHandler.cpp" />
+    <ClCompile Include="RamEditorMenu.cpp" />
     <ClCompile Include="Util.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CPUEditorMenu.h" />
+    <ClInclude Include="GPUEditorMenu.h" />
     <ClInclude Include="Header.h" />
-    <ClInclude Include="InventoryMang.h" />
+    <ClInclude Include="InventoryManagementMenu.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="MOBOEditorMenu.h" />
+    <ClInclude Include="PartEditorMenu.h" />
+    <ClInclude Include="PartFactory.h" />
     <ClInclude Include="Parts.h" />
     <ClInclude Include="MenuHandler.h" />
+    <ClInclude Include="RamEditorMenu.h" />
     <ClInclude Include="Util.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -8,14 +8,26 @@
 // ---------------------------------------------------------------
 
 #include "Header.h"
+#include "Menu.h"
+#include "InventoryManagementMenu.h"
+#include "MenuHandler.h"
 
 int main()
 {	
 	cout << "Hello and welcome to Group 2's CIS247 Final Project app" << endl;
-	Menus menu;
-	//Inventory inv;
-	menu.mainMenu();
-	
+	MenuHandler* handler = MenuHandler::GetInstance();
+	Menu* menu = new InventoryManagementMenu();
+	menu->Enter();
+
+	handler->ActiveMenu = menu;
+
+	// So long as there is an active menu AND we're active.... do the things!
+	while (handler->ActiveMenu != nullptr && handler->ActiveMenu->isActive)
+	{
+		int option = handler->ActiveMenu->PickMenuOption();
+		handler->ActiveMenu->HandleMenuOption(option);
+	}
+
 	cout << "Thank you!\n";
 	system("pause");
 	return 0;
