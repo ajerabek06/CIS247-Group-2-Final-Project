@@ -11,5 +11,5 @@
 #include <tuple>
 #include "Parts.h"
 #include "Util.h"
+#include "Menu.h"
 #include "MenuHandler.h"
-#include "InventoryMang.h"
